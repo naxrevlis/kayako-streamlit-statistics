@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "kayako-tech-support"
+version = "0.1.0"
+description = ""
+authors = ["Maksim Panin <me@naxrevlis.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.2.0"
+openpyxl = "^3.0.9"
+DateTime = "^4.3"
+pymongo = "^3.12.1"
+plotly = "^5.4.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b1"
+watchdog = "^2.1.6"
+autoflake = "^1.4"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
