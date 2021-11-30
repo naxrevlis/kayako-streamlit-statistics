@@ -1,2 +1,6 @@
 .sreamelit/
 poetry.lock
+.idea/
+.streamlit/
+.vscode/
+__pycache__/
