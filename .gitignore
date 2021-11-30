@@ -1,5 +1,4 @@
 .sreamelit/
-poetry.lock
 .idea/
 .streamlit/
 .vscode/

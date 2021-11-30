@@ -17,7 +17,7 @@ RUN pip install -U \
 
 COPY poetry.lock pyproject.toml ./
 RUN poetry install --no-dev && \
-    rm -rf ~/.cache/pypoetry/{cache,artifacts}
+    rm -rf ~/.cache/pypoetry/{cache}
 
 COPY . ./kayako_stat
 
@@ -25,4 +25,4 @@ WORKDIR /kayako_stat
 
 ENV HOST 0.0.0.0
 ENV PORT 8501
-CMD poetry run python -m streamlit run kayako_statistics.py
+CMD streamlit run kayako_statistics.py

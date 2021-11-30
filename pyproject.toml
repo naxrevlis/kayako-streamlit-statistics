@@ -11,6 +11,7 @@ openpyxl = "^3.0.9"
 DateTime = "^4.3"
 pymongo = "^3.12.1"
 plotly = "^5.4.0"
+platformdirs = "^2.4.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.11b1"

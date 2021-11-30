@@ -93,13 +93,13 @@ def default_view(start_date, end_date, region, system, query_type, status):
     }
     res = db["records"].find(query)
     df = pd.DataFrame.from_records(res)
-    df["resolution_time"] = (
-        pd.to_datetime(df["last_answer_date"]) - pd.to_datetime(df["creation_date"])
-    ).dt.days
     count = df.shape[0]
     st.write(f"Всего заявок в запросе: {count}")
 
     if count != 0:
+        df["resolution_time"] = (
+                pd.to_datetime(df["last_answer_date"]) - pd.to_datetime(df["creation_date"])
+        ).dt.days
         st.write(f"Количество заявок по типу системы")
         st.bar_chart(df["system_id"].value_counts(), height=500)
         st.write("Тип заявок")
@@ -108,8 +108,6 @@ def default_view(start_date, end_date, region, system, query_type, status):
         st.write(f"Среднее время решения заявки: {df['resolution_time'].mean()}")
         st.write(f"Медианное время решения заявки: {df['resolution_time'].median()}")
         st.bar_chart(df["resolution_time"].value_counts(), height=300)
-
-        # Pie chart, where the slices will be ordered and plotted counter-clockwise:
         requests_by_type = df["type"].value_counts()
         requests_by_status = df["status"].value_counts()
 
